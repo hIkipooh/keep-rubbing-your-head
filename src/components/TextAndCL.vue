@@ -1,8 +1,22 @@
 <template>
   <v-app>
-    <v-textarea class="main" v-model="mainText" ref="mainText" disabled></v-textarea>
-    <v-textarea class="command-log" v-model="commandLog" ref="commandLog" readonly></v-textarea>
-    <v-text-field class="command-line" v-model="commandText" v-on:keyup.enter="onEnter" ></v-text-field>
+    <v-textarea
+      class="main"
+      v-model="mainText"
+      ref="mainText"
+      disabled
+    ></v-textarea>
+    <v-textarea
+      class="command-log"
+      v-model="commandLog"
+      ref="commandLog"
+      readonly
+    ></v-textarea>
+    <v-text-field
+      class="command-line"
+      v-model="commandText"
+      v-on:keyup.enter="onEnter"
+    ></v-text-field>
   </v-app>
 </template>
 
