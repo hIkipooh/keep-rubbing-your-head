@@ -1,9 +1,11 @@
 <template>
   <v-app>
     <v-navigation-drawer>
-      <v-toolbar-title class="headline text-uppercase light-green-accent-3">
-        <span class="text">Index</span>
-      </v-toolbar-title>
+      <v-list>
+        <v-list-tile-title class="light-green-accent-3"
+          >Index</v-list-tile-title
+        >
+      </v-list>
     </v-navigation-drawer>
   </v-app>
 </template>

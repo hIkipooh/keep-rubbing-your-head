@@ -2,7 +2,7 @@
   <v-app>
     <v-container fluid grid-list-xl>
       <v-layout row justify-space-between>
-        <v-flex xs2 left-right>
+        <v-flex xs2 left-right color="black">
           <navbar-left />
         </v-flex>
         <v-flex>
@@ -28,11 +28,10 @@ export default {
     "text-and-c-l": TextAndCL,
     "index-right": IndexRight
   },
-  data() {
-    return {
-      //
-    };
-  }
+  data: () => ({
+    essay: [[]],
+    currentDirectory: ""
+  })
 };
 </script>
 
