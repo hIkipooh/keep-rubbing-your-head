@@ -29,8 +29,25 @@ export default {
     "index-right": IndexRight
   },
   data: () => ({
-    essay: [[]],
-    currentDirectory: ""
+    essay: [
+      [
+        "this is the sample.",
+        "this is the sample to test your life.",
+        "how you gon do me like that bruh"
+      ],
+      [
+        "The hack are you talking about I didn't do anything.",
+        "Well that ain't good for no nothing.",
+        "Do not disrespect the programmer."
+      ],
+      [
+        "What the hack are you going to do about it.",
+        "I don't really think that I'm going to do anything about it my fellow brotherling."
+      ],
+      ["Go about your merry way then."]
+    ],
+    currentDirectory: [1, 2],
+    scope: "block"
   })
 };
 </script>
