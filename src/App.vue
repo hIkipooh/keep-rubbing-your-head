@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-container fluid grid-list-xl>
-      <v-layout row justify-space-between class="layout">
+      <v-layout row justify-space-between>
         <v-flex xs2 left-right>
           <navbar-left />
         </v-flex>

@@ -1,17 +1,13 @@
 <template>
-<v-app>
+  <v-app>
     <v-navigation-drawer>
-        <v-toolbar-title class="headline text-uppercase light-green-accent-3">
-            <span class="text">Index</span>
-        </v-toolbar-title>
+      <v-toolbar-title class="headline text-uppercase light-green-accent-3">
+        <span class="text">Index</span>
+      </v-toolbar-title>
     </v-navigation-drawer>
-</v-app>
-
-
+  </v-app>
 </template>
 
-<script>
-</script>
+<script></script>
 
-<style>
-</style>
+<style></style>
