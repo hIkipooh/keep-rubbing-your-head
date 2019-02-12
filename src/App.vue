@@ -1,8 +1,18 @@
 <template>
   <v-app>
-    <navbar-left />
-    <text-and-c-l />
-    <index-right />
+    <v-container fluid grid-list-xl>
+      <v-layout row justify-space-between class="layout">
+        <v-flex xs2 left-right>
+          <navbar-left />
+        </v-flex>
+        <v-flex>
+          <text-and-c-l />
+        </v-flex>
+        <v-flex xs2 left-right>
+          <index-right />
+        </v-flex>
+      </v-layout>
+    </v-container>
   </v-app>
 </template>
 
@@ -25,3 +35,16 @@ export default {
   }
 };
 </script>
+
+<style>
+.left-right {
+  height: 100%;
+  width: 100%;
+  border-style: solid;
+  border-color: #76ff03;
+  border-width: 10px;
+}
+.text {
+  color: #76ff03;
+}
+</style>
