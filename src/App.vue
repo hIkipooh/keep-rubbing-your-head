@@ -29,34 +29,35 @@ export default {
     "index-right": IndexRight
   },
   data: () => ({
-    user: [
-      {
-        example1: [
-          "Hello there.",
-          "The angel from my nightmare, the shadows in the background of the morgue.",
-          "The unsuspecting victim. Of the darkness in the valley we can live like Jack and Sally if we want.",
-          "Where you can always find me."
-        ]
-      },
-      {
-        example2: [
-          "This is an example, where we can find some complexity.",
-          "The thing about essays structured like this is that they probably didn't think it through beforehand",
-          {
-            theUnsuspected: [
-              "But then again, how can you call it a file structure if there are no nested directories?",
-              {
-                codeCoffee: [
-                  "The lessone here is guys, if you are struggling with code coffee, take three days to assign yourself some code coffee because nobody can torture you more than you can torture yourself ^오^"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ],
-    currentDirectory: [1, 2],
-    scope: "directory"
+    // user: [
+    //   {
+    //     example1: [
+    //       "Hello there.",
+    //       "The angel from my nightmare, the shadows in the background of the morgue.",
+    //       "The unsuspecting victim. Of the darkness in the valley we can live like Jack and Sally if we want.",
+    //       "Where you can always find me."
+    //     ]
+    //   },
+    //   {
+    //     example2: [
+    //       "This is an example, where we can find some complexity.",
+    //       "The thing about essays structured like this is that they probably didn't think it through beforehand",
+    //       {
+    //         theUnsuspected: [
+    //           "But then again, how can you call it a file structure if there are no nested directories?",
+    //           {
+    //             codeCoffee: [
+    //               "The lessone here is guys, if you are struggling with code coffee, take three days to assign yourself some code coffee because nobody can torture you more than you can torture yourself ^오^"
+    //             ]
+    //           }
+    //         ]
+    //       }
+    //     ]
+    //   }
+    // ],
+    // currentDirectory: [],
+    // pathDictionary: [],
+    // scope: "directory"
   })
 };
 </script>

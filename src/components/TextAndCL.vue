@@ -23,7 +23,7 @@
 <script>
 export default {
   name: "TextAndCL",
-  props: ["essay", "currentDirectory", "scope"],
+  props: ["user", "currentDirectory", "pathDictionary", "scope"],
   data: () => ({
     commandText: "",
     commandLog: "",
@@ -34,25 +34,59 @@ export default {
       const commands = ["cd", "pwd", "ls", "insert", "change", "delete"];
       const inputCommand = this.commandText.split(" ");
       const commandAction = inputCommand[0];
-      if (!commands.includes(commandAction) || inputCommand.length > 2) {
+      if (!commands.includes(commandAction)) {
         this.commandLog +=
           "==========Please enter correct command=========== \n";
-        // this.$refs.commandLog.value = "=====Invalid command=====";
         this.commandText = "";
         return console.log("==========Not a Command===========");
       }
-      console.log(inputCommand);
-      console.log(commandAction);
+      inputCommand.shift();
+      switch (commandAction) {
+        case "cd":
+          this.changeDirectory(inputCommand);
+          break;
+        case "pwd":
+          this.pwd();
+          break;
+        case "ls":
+          this.list();
+          break;
+      }
       this.commandText = "";
     },
-    insert: function() {
-      const directory = currentDirectory.split("/");
-    },
     changeDirectory: function(dir) {
-      //   let directory = dir.slice(3, string.length - 1);
-      //   directory = directory.split("/");
+      const path = dir.split("/");
+      const traverse = (key, element) => {};
+      for (const i = 0; i < path.length; i++) {
+        this.user.forEach(el => {
+          for (const key in el) {
+            if (key === path[i]) {
+              this.currentDirectory = this.user[i];
+            } else {
+              traverse(path[i], el);
+            }
+          }
+        });
+      }
+    },
+    convertDirectory: function() {
+      let directory = this.user[this.currentDirectory[0]];
+      for (const i = 1; i < this.currentDirectory.length; i++) {
+        directory = directory[this.currentDirectory[i]];
+      }
+      return directory;
+    },
+    list: function() {},
+    pwd: function() {
+      console.log("=====currentDirectory========", this.convertDirectory());
+    },
+    setUpPathDictionary: function() {
+      this.pathDictionary = [];
+      this.pathDictionary.push(Object.keys(this.user));
     }
   }
+  //   created: function() {
+  //   }
 };
 </script>
 
