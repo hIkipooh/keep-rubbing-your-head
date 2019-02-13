@@ -53,7 +53,7 @@
     </v-navigation-drawer>
     <v-toolbar color="amber" app absolute clipped-left>
       <v-toolbar-side-icon @click.native="drawer = !drawer"></v-toolbar-side-icon>
-      <span class="title ml-3 mr-5">Google&nbsp;<span class="text">Keep</span></span>
+      <span class="title ml-2 mr-3">Google&nbsp;<span class="text">Keep</span></span>
       <v-text-field
         solo-inverted
         flat
@@ -63,37 +63,26 @@
       <v-spacer></v-spacer>
     </v-toolbar>
     <v-content>
-      <v-container fluid fill-height class="grey lighten-4">
-        <v-layout justify-center align-center>
+      <v-layout>
+        <v-flex xs12>
           <text-and-c-l />
-        </v-layout>
-      </v-container>
+        </v-flex>
+      </v-layout>
     </v-content>
   </v-app>
 </div>
 </template>
 
 <script>
-import NavbarLeft from "./components/NavbarLeft.vue";
 import TextAndCL from "./components/TextAndCL.vue";
-import IndexRight from "./components/IndexRight.vue";
 
 export default {
   name: "App",
   components: {
-    "navbar-left": NavbarLeft,
-    "text-and-c-l": TextAndCL,
-    "index-right": IndexRight
+    "text-and-c-l": TextAndCL
   }
 };
 </script>
 
 <style>
-.left-right {
-  height: 100%;
-  width: 100%;
-  border-style: solid;
-  border-color: #76ff03;
-  border-width: 10px;
-}
 </style>

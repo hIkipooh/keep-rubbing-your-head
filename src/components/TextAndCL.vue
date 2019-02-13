@@ -1,6 +1,13 @@
 <template>
   <div id="app">
       <v-app id="inspire">
+          <v-container fluid fill-height>
+              <v-flex xs12 sm8, md4>
+                  <v-card class="elevation-12">
+                  </v-card>
+              </v-flex>
+          </v-container>
+      </v-app>
         <v-textarea
         class="main title font-weight-medium"
         v-model="mainText"
@@ -16,7 +23,6 @@
         v-model="commandText"
         v-on:keyup.enter="onEnter"
         ></v-text-field>
-      </v-app>
   </div>
 </template>
 
@@ -130,18 +136,4 @@ export default {
 </script>
 
 <style>
-.main {
-  width: 100%;
-  height: 70%;
-  color: black;
-}
-.command-log {
-  width: 100%;
-  height: 20%;
-  background-color: grey;
-}
-.command-line {
-  width: 100%;
-  height: 10%;
-}
 </style>
