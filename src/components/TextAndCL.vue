@@ -1,21 +1,23 @@
 <template>
-  <v-app>
-    <v-textarea
-      class="main"
-      v-model="mainText"
-      disabled
-    ></v-textarea>
-    <v-textarea
-      class="command-log"
-      v-model="commandLog"
-      readonly
-    ></v-textarea>
-    <v-text-field
-      class="command-line"
-      v-model="commandText"
-      v-on:keyup.enter="onEnter"
-    ></v-text-field>
-  </v-app>
+  <div id="app">
+      <v-app id="inspire">
+        <v-textarea
+        class="main title font-weight-medium"
+        v-model="mainText"
+        disabled
+        ></v-textarea>
+        <v-textarea
+        class="command-log title font-weight-light"
+        v-model="commandLog"
+        readonly
+        ></v-textarea>
+        <v-text-field
+        class="command-line title font-weight-light"
+        v-model="commandText"
+        v-on:keyup.enter="onEnter"
+        ></v-text-field>
+      </v-app>
+  </div>
 </template>
 
 <script>
