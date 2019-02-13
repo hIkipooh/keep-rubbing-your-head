@@ -1,28 +1,27 @@
 <template>
   <div id="app">
-      <v-app id="inspire">
-          <v-container fluid fill-height>
-              <v-flex xs12 sm8, md4>
-                  <v-card class="elevation-12">
-                  </v-card>
-              </v-flex>
-          </v-container>
-      </v-app>
-        <v-textarea
-        class="main title font-weight-medium"
-        v-model="mainText"
-        disabled
-        ></v-textarea>
-        <v-textarea
-        class="command-log title font-weight-light"
-        v-model="commandLog"
-        readonly
-        ></v-textarea>
-        <v-text-field
-        class="command-line title font-weight-light"
-        v-model="commandText"
-        v-on:keyup.enter="onEnter"
-        ></v-text-field>
+    <v-app id="inspire">
+      <v-container fluid fill-width>
+          <v-card class="main title font-weight-medium" v-model="mainText">
+
+          </v-card>
+            <v-textarea
+              class="main title font-weight-medium"
+              v-model="mainText"
+              disabled
+            ></v-textarea>
+            <v-textarea
+              class="command-log title font-weight-light"
+              v-model="commandLog"
+              readonly
+            ></v-textarea>
+          <v-text-field
+            class="command-line title font-weight-light"
+            v-model="commandText"
+            v-on:keyup.enter="onEnter"
+          ></v-text-field>
+      </v-container>
+    </v-app>
   </div>
 </template>
 
@@ -123,7 +122,8 @@ export default {
       this.commandLog += JSON.stringify(Object.keys(this.currentDirectory));
     },
     pwd: function() {
-      this.commandLog += this.currentDirectory;
+      const convertCurrentDirectory = Object.keys(this.currentDirectory);
+      this.commandLog += convertCurrentDirectory;
     },
     setUpPathDictionary: function() {
       this.pathDictionary = [];
@@ -135,5 +135,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>
