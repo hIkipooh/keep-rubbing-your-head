@@ -3,13 +3,11 @@
     <v-textarea
       class="main"
       v-model="mainText"
-      ref="mainText"
       disabled
     ></v-textarea>
     <v-textarea
       class="command-log"
       v-model="commandLog"
-      ref="commandLog"
       readonly
     ></v-textarea>
     <v-text-field
@@ -23,11 +21,40 @@
 <script>
 export default {
   name: "TextAndCL",
-  props: ["user", "currentDirectory", "pathDictionary", "scope"],
+  props: [],
   data: () => ({
     commandText: "",
     commandLog: "",
-    mainText: ""
+    mainText: "",
+    user: [
+      {
+        example1: [
+          "Hello there.",
+          "The angel from my nightmare, the shadows in the background of the morgue.",
+          "The unsuspecting victim. Of the darkness in the valley we can live like Jack and Sally if we want.",
+          "Where you can always find me."
+        ]
+      },
+      {
+        example2: [
+          "This is an example, where we can find some complexity.",
+          "The thing about essays structured like this is that they probably didn't think it through beforehand",
+          {
+            theUnsuspected: [
+              "But then again, how can you call it a file structure if there are no nested directories?",
+              {
+                codeCoffee: [
+                  "The lessone here is guys, if you are struggling with code coffee, take three days to assign yourself some code coffee because nobody can torture you more than you can torture yourself ^오^"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    currentDirectory: [],
+    pathDictionary: [],
+    scope: "directory"
   }),
   methods: {
     onEnter: function() {
@@ -55,19 +82,27 @@ export default {
       this.commandText = "";
     },
     changeDirectory: function(dir) {
-      const path = dir.split("/");
-      const traverse = (key, element) => {};
-      for (const i = 0; i < path.length; i++) {
+      const path = dir[0].split("/");
+      const traverse = (key, element) => {
+        for (const key2 in element) {
+          if (key2 === key) {
+            this.currentDirectory = element[key2];
+          }
+        }
+      };
+      for (let i = 0; i < path.length; i++) {
         this.user.forEach(el => {
           for (const key in el) {
             if (key === path[i]) {
-              this.currentDirectory = this.user[i];
-            } else {
+              this.currentDirectory = el;
+            } else if (typeof el[key] !== "string") {
               traverse(path[i], el);
             }
           }
         });
       }
+      console.log("=======current directory========", this.currentDirectory);
+      console.log("============path========", path);
     },
     convertDirectory: function() {
       let directory = this.user[this.currentDirectory[0]];
@@ -76,9 +111,11 @@ export default {
       }
       return directory;
     },
-    list: function() {},
+    list: function() {
+      this.commandLog += JSON.stringify(Object.keys(this.currentDirectory));
+    },
     pwd: function() {
-      console.log("=====currentDirectory========", this.convertDirectory());
+      this.commandLog += this.currentDirectory;
     },
     setUpPathDictionary: function() {
       this.pathDictionary = [];
